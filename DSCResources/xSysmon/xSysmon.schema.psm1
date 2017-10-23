@@ -45,9 +45,12 @@ Configuration xSysmon
     Script sysmonScriptInstall {
         GetScript = { (Get-Service Sysmon -ErrorAction SilentlyContinue) }
         TestScript = {
-            return ( (Get-Service Sysmon -ErrorAction SilentlyContinue) -ne $null )
+            return ( ((Get-Service Sysmon -ErrorAction SilentlyContinue) -ne $null) -and ((fltmc | findstr /i sysmondrv) -ne $null) )
         }
         SetScript = {
+            if( (Get-Service Sysmon -ErrorAction SilentlyContinue) ) {
+                & "$($Using:LocalPath)\sysmon64.exe" -u
+            }
             & "$($Using:LocalPath)\sysmon64.exe" -i "$($Using:LocalPath)\$($Using:ConfigFileName)" -accepteula
             Copy-Item "$($Using:LocalPath)\$($Using:ConfigFileName)" "$($Using:LocalPath)\current-$($Using:ConfigFileName)" -Force
         }

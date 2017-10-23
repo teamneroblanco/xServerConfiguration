@@ -8,7 +8,7 @@
 RootModule = 'xSysmon.schema.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.0.5'
+ModuleVersion = '1.0.6'
 
 # ID used to uniquely identify this module
 GUID = '8045ca8a-b8df-453e-8278-a3b13c954205'
