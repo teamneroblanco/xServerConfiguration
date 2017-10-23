@@ -5,12 +5,12 @@ Configuration xMMAgent
         [string]
         $SourcePath = "",
         [string]
-        $LocalPath = ""
+        $LocalPath = "",
+	[string]
+	$OPSINSIGHTS_WS_ID = "",
+	[string]
+	$OPSINSIGHTS_WS_KEY = ""
     )
-
-    $OPSINSIGHTS_WS_ID = Get-AutomationVariable -Name "OPSINSIGHTS_WS_ID"
-    $OPSINSIGHTS_WS_KEY = Get-AutomationVariable -Name "OPSINSIGHTS_WS_KEY"
-    $DSCRESOURCE_PATH = Get-AutomationVariable -Name "DSCRESOURCE_PATH"
 
     Service mmagentService
     {
