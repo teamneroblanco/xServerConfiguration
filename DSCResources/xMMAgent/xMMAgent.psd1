@@ -8,7 +8,7 @@
 RootModule = 'xMMagent.schema.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.0.2'
+ModuleVersion = '1.0.3'
 
 # ID used to uniquely identify this module
 GUID = '01f3151c-cb85-4441-b881-9b7540373bda'
